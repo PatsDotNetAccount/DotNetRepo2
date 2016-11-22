@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DotNetRepo2
 {
@@ -15,7 +11,7 @@ namespace DotNetRepo2
             Console.WriteLine("Erste Änderung...");
 
 
-Console.WriteLine("Erste Änderung vom Tablet aus...");
+            Console.WriteLine("Erste Änderung vom Tablet aus...");
 
             Console.ReadKey();
         }
