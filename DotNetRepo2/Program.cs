@@ -14,6 +14,9 @@ namespace DotNetRepo2
 
             Console.WriteLine("Erste Änderung...");
 
+
+Console.WriteLine("Erste Änderung vom Tablet aus...");
+
             Console.ReadKey();
         }
     }
