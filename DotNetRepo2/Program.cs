@@ -8,19 +8,21 @@ namespace DotNetRepo2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hallo Git-Welt 3");
+            //Console.WriteLine("Hallo Git-Welt 3");
 
-            Console.WriteLine("Erste Änderung...");
+            //Console.WriteLine("Erste Änderung...");
 
-            Console.WriteLine("Erste Änderung vom Tablet aus...");
+            //Console.WriteLine("Erste Änderung vom Tablet aus...");
 
             var dbConnect = new DBConnect();
-            //dbConnect.Delete();
-            List<string>[] results = dbConnect.Select();
-            foreach (var item in results[0])
-            {
-                Console.WriteLine(item);
-            }
+            ////dbConnect.Delete();
+            //List<string>[] results = dbConnect.Select();
+            //foreach (var item in results[0])
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            dbConnect.InsertPerson("", "");
 
             Console.ReadKey();
         }

@@ -110,6 +110,41 @@ namespace DotNetRepo2
             }
         }
 
+        /// <summary>
+        /// Inserts a Person into the mytest Table
+        /// </summary>
+        /// <param name="firstName">First Name</param>
+        /// <param name="LastName">Last Name</param>
+        public void InsertPerson(string firstName, string LastName)
+        {
+            //            string query = "INSERT INTO tableinfo (name, age) VALUES('John Smith', '33')";
+            //            string query = "INSERT INTO gender (id, gender) VALUES('0', 'Pumpkin')";
+            string query = string.Format("CALL InsertPeople('{0}', '{1}');", firstName, LastName);
+
+            //open connection
+            if (this.OpenConnection() == true)
+            {
+                //create command and assign the query and connection from the constructor
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                try
+                {
+                    //Execute command
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("SQL-Exception: {0}", ex.Message);
+                }
+                finally
+                {
+                    //close connection
+                    this.CloseConnection();
+                }
+
+
+            }
+        }
+
         //Update statement
         public void Update()
         {
@@ -150,7 +185,8 @@ namespace DotNetRepo2
         //Select statement
         public List<string>[] Select()
         {
-            string query = "SELECT * FROM mytest";
+//            string query = "SELECT * FROM mytest";
+            string query = "CALL GetAllPeople()";
 
             //Create a list to store the result
             List<string>[] list = new List<string>[3];
